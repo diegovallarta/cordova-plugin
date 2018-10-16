@@ -112,3 +112,7 @@ DerivedData
 
 #JSDoc
 jsdoc/
+.idea/cordova-batch-plugin.iml
+.idea/inspectionProfiles/
+.idea/modules.xml
+.idea/vcs.xml

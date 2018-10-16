@@ -75,7 +75,7 @@ public class BatchCordovaPlugin extends CordovaPlugin implements Callback, Logge
 
     @Override
     @SuppressWarnings("unchecked")
-    public boolean execute(String action, String rawArgs, CallbackContext callbackContext) throws JSONException
+    public boolean execute(String action, String rawArgs, final CallbackContext callbackContext) throws JSONException
     {
         if (action != null && action.startsWith("BA_"))
         {
@@ -93,7 +93,7 @@ public class BatchCordovaPlugin extends CordovaPlugin implements Callback, Logge
                         if (parametersList != null && parametersList.size() > 0)
                         {
                             final Object firstItem = parametersList.get(0);
-    
+
                             try
                             {
                                 parametersMap = (Map<String, Object>) firstItem;
@@ -170,7 +170,7 @@ public class BatchCordovaPlugin extends CordovaPlugin implements Callback, Logge
                     public void run(String value)
                     {
                         // Don't use NO_RESULT, it is bugged
-                        webView.sendPluginResult(new PluginResult(PluginResult.Status.OK, value), callbackContext.getCallbackId());  
+                        webView.sendPluginResult(new PluginResult(PluginResult.Status.OK, value), callbackContext.getCallbackId());
                     }
                 });
             }

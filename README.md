@@ -4,6 +4,8 @@
 
 [![npm version](https://badge.fury.io/js/com.batch.cordova.svg)](https://badge.fury.io/js/com.batch.cordova)
 
+#### This fork is for making this plugin [Capacitor](https://capacitor.ionicframework.com) compatible
+
 Welcome to Batch's Cordova Plugin!
 
 This repository contains the plugin's source code (native code + cordova) and buildscripts.
@@ -35,6 +37,13 @@ cordova plugin add com.batch.cordova
 A `batch` object will be present on the window. Its methods and modules are documented in `types/index.d.ts`
 
 Our [official documentation](https://batch.com/doc/cordova/sdk-integration/initial-setup.html) will walk you through the integration process, describing how to perform a successful integration of both required and optional plugin features.
+
+# Capacitor
+
+Add in your root build.grade
+
+    defaultTargetSdkVersion = 28
+    
 
 # Development
 

@@ -22,14 +22,14 @@ public class InboxBridge
 
     public static SimplePromise<String> fetchNotifications(Activity activity)
     {
-        BatchInboxFetcher fetcher = Batch.Inbox.getFetcher(activity);
+        final BatchInboxFetcher fetcher = Batch.Inbox.getFetcher(activity);
         fetcher.setFetchLimit(NOTIFICATIONS_COUNT);
         fetcher.setMaxPageSize(NOTIFICATIONS_COUNT);
 
         return new SimplePromise<>(new SimplePromise.DeferredResultExecutorRunnable<String>()
         {
             @Override
-            public void run(SimplePromise<String> promise)
+            public void run(final SimplePromise<String> promise)
             {
                 fetcher.fetchNewNotifications(new BatchInboxFetcher.OnNewNotificationsFetchedListener()
                 {
@@ -55,14 +55,14 @@ public class InboxBridge
                                                            String userID,
                                                            String auth)
     {
-        BatchInboxFetcher fetcher = Batch.Inbox.getFetcher(activity, userID, auth);
+        final BatchInboxFetcher fetcher = Batch.Inbox.getFetcher(activity, userID, auth);
         fetcher.setFetchLimit(NOTIFICATIONS_COUNT);
         fetcher.setMaxPageSize(NOTIFICATIONS_COUNT);
 
         return new SimplePromise<>(new SimplePromise.DeferredResultExecutorRunnable<String>()
         {
             @Override
-            public void run(SimplePromise<String> promise)
+            public void run(final SimplePromise<String> promise)
             {
                 fetcher.fetchNewNotifications(new BatchInboxFetcher.OnNewNotificationsFetchedListener()
                 {
